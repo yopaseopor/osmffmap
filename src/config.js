@@ -1650,7 +1650,7 @@ var config = {
 
 				var stroke = new ol.style.Stroke({
 					color: 'rgba(255,165,0,0.5)',
-					width: 6
+					width: 3
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Circle({
@@ -1688,7 +1688,7 @@ var config = {
 
 				var stroke = new ol.style.Stroke({
 					color: 'rgba(255,0,0,0.5)',
-					width: 6
+					width: 1
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Circle({

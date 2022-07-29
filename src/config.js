@@ -1600,45 +1600,39 @@ var config = {
 		{
 			group: 'Tracktype',
 			title: 'Grade1',
-			query: '(way[highway=track][tracktype=grade1]({{bbox}});node(w););out meta;',
+			query: '(way["highway"="track"]["tracktype"="grade1"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxwidth.svg',
 			style: function (feature) {
-				var maxspeed = feature.get('width') || '';
-				if (maxspeed === ''){
-					return undefined;
-				}
-				var styles = [];
-
-				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 0.3) + 1.0;
-				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed, 20) / 5);
+var key_regex = /^width$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,255,0,0.5)',
-					width: 5
+					color: 'rgba(0,0,0,1)',
+					width: 1.25
 				});
-				styles.push(new ol.style.Style({
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								font: 'small-caps bold 10px/1 sans-serif',
+								offsetX : 0,
+								offsetY : 0,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+							}),
+					fill:  fill,
 					stroke: stroke
-				}));
-
-				// doesn't show speed sign in roundabout and similars
-				if (!feature.get('junction')) {
-					/* show the speed sign */ 
-					var coords = feature.getGeometry().getCoordinates();
-
-					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.7)), // show the image in the middle of the segment
-						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxwidth_empty.svg',
-							scale:0.07
-						}),
-						text: new ol.style.Text({
-							text: maxspeed
-						})
-					}));
-				}
-
-				return styles;
+				});
+				return style;
 			}
 		},
 		

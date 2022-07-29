@@ -1603,7 +1603,7 @@ var config = {
 			query: '(way["highway"="track"]["tracktype"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxwidth.svg',
 			style: function (feature) {
-var key_regex = /^width$/
+				var key_regex = /^width$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({

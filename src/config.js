@@ -746,13 +746,50 @@ var config = {
 			}
   },
 		{
-			group: 'No limits',
+			group: 'Tracktype',
 			title: 'No tracktype <a href="https://imgur.com/a/rioaJEC">A tenir en compte</a>',
 			query: '(way["highway"="track"][!"tracktype"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
 				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(0,0,0,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+  },
+		{
+			group: 'Emergency',
+			title: 'Fire hydrant',
+			query: '(node["emergency"="fire_hydrant"][!"tracktype"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
+			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			style: function (feature) {
+				var key_regex = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({

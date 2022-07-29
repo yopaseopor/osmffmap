@@ -1600,7 +1600,7 @@ var config = {
 		{
 			group: 'Tracktype',
 			title: 'Grade1',
-			query: '(way["highway"="track"]["tracktype"="grade1"]({{bbox}});node(w););out meta;',
+			query: '(way["highway"="track"]["tracktype"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxwidth.svg',
 			style: function (feature) {
 var key_regex = /^width$/

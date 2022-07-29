@@ -1600,10 +1600,10 @@ var config = {
 		{
 			group: 'Tracktype',
 			title: 'Grade1',
-			query: '(way["highway"="track"]["tracktype"]({{bbox}});node(w););out meta;',
+			query: '(way["highway"="track"]["tracktype"="grade1"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxwidth.svg',
 			style: function (feature) {
-				var key_regex = /^width$/
+				var key_regex = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
@@ -1624,7 +1624,83 @@ var config = {
 								text: name,
 								font: 'small-caps bold 10px/1 sans-serif',
 								offsetX : 10,
-								offsetY : 0,
+								offsetY : 10,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+							}),
+					fill:  fill,
+					stroke: stroke
+				});
+				return style;
+			}
+},
+		{
+			group: 'Tracktype',
+			title: 'Grade2',
+			query: '(way["highway"="track"]["tracktype"="grade2"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/maxwidth.svg',
+			style: function (feature) {
+				var key_regex = /^survey:date$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(255,165,0,0.5)',
+					width: 6
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								font: 'small-caps bold 10px/1 sans-serif',
+								offsetX : 10,
+								offsetY : 10,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+							}),
+					fill:  fill,
+					stroke: stroke
+				});
+				return style;
+			}
+},
+		{
+			group: 'Tracktype',
+			title: 'Grade3',
+			query: '(way["highway"="track"]["tracktype"="grade3"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/maxwidth.svg',
+			style: function (feature) {
+				var key_regex = /^survey:date$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(255,0,0,0.5)',
+					width: 6
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								font: 'small-caps bold 10px/1 sans-serif',
+								offsetX : 10,
+								offsetY : 10,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'
                         }),
@@ -1635,6 +1711,7 @@ var config = {
 				return style;
 			}
 		},
+		
 		
 				// OUTSIDE OSM DATA
 		{

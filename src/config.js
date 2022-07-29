@@ -1611,8 +1611,8 @@ var key_regex = /^width$/
 				});
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,0,0,1)',
-					width: 1.25
+					color: 'rgba(0,255,0,0.5)',
+					width: 6
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Circle({
@@ -1623,7 +1623,7 @@ var key_regex = /^width$/
 							text: new ol.style.Text({
 								text: name,
 								font: 'small-caps bold 10px/1 sans-serif',
-								offsetX : 0,
+								offsetX : 10,
 								offsetY : 0,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'

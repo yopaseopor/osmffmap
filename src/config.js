@@ -1748,7 +1748,7 @@ var config = {
 
 		{
 			group: 'Operational_status:date',
-			title: 'No operational_status:date',
+			title: 'No operational_status:date ',
 			query: '(nwr[!"operational_status:date"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',

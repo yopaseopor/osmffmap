@@ -787,7 +787,7 @@ var config = {
 			title: 'Fire hydrant',
 			query: '(node["emergency"="fire_hydrant"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/fire_hydrant.svg',
-			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -803,7 +803,15 @@ var config = {
 					image: new ol.style.Circle({
 						fill: fill,
 						stroke: stroke,
-						radius: 5
+						var maxspeed = feature.get('fire_hydrant:diameter') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+				/* draw the segment line */ 
+				var width = (parseFloat(maxspeed) / 10) + 1.0;
+						radius: maxspeed
 					}),
 							text: new ol.style.Text({
 								text: name,
@@ -824,7 +832,7 @@ var config = {
 			title: 'Suction point',
 			query: '(node["emergency"="suction_point"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/suction_point.svg',
-			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -861,7 +869,7 @@ var config = {
 			title: 'Water tank',
 			query: '(nwr["emergency"="water_tank"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/water_tank.svg',
-			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -898,7 +906,7 @@ var config = {
 			title: 'Fire water pond',
 			query: '(nwr["emergency"="fire_water_pond"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/water_pond.svg',
-			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"

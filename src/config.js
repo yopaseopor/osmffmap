@@ -786,7 +786,7 @@ var config = {
 			group: 'Emergency',
 			title: 'Fire hydrant',
 			query: '(node["emergency"="fire_hydrant"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
+			iconSrc: imgSrc + 'icones/fire_hydrant.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
@@ -823,7 +823,7 @@ var config = {
 			group: 'Emergency',
 			title: 'Suction point',
 			query: '(node["emergency"="suction_point"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
+			iconSrc: imgSrc + 'icones/suction_point.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
@@ -860,7 +860,7 @@ var config = {
 			group: 'Emergency',
 			title: 'Water tank',
 			query: '(nwr["emergency"="water_tank"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
+			iconSrc: imgSrc + 'icones/water_tank.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
@@ -897,7 +897,7 @@ var config = {
 			group: 'Emergency',
 			title: 'Fire water pond',
 			query: '(nwr["emergency"="fire_water_pond"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
+			iconSrc: imgSrc + 'icones/water_pond.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
 				var key_regex = /^survey:date$/

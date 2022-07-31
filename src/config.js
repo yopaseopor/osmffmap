@@ -784,7 +784,7 @@ var config = {
   },
 		{
 			group: 'Emergency',
-			title: 'Fire hydrant',
+			title: 'Fire hydrant2',
 			query: '(node["emergency"="fire_hydrant"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/fire_hydrant.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
@@ -801,7 +801,7 @@ style: function (feature) {
 
 				var stroke = new ol.style.Stroke({
 					color: 'rgb(' + color.join() + ')',
-					width: width
+					width: '1'
 				});
 				styles.push(new ol.style.Style({
 					stroke: stroke

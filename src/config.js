@@ -789,7 +789,7 @@ var config = {
 			iconSrc: imgSrc + 'icones/fire_hydrant.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 style: function (feature) {
-				var maxspeed = feature.get('fire_hidrant:diameter') || '';
+				var maxspeed = feature.get('fire_hydrant:diameter') || '';
 				if (maxspeed === ''){
 					return undefined;
 				}

@@ -749,7 +749,7 @@ var config = {
 			group: 'Tracktype',
 			title: 'No tracktype <a href="https://imgur.com/a/rioaJEC">A tenir en compte</a>',
 			query: '(way["highway"="track"][!"tracktype"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
+			iconSrc: imgSrc + 'icones/no_tracktype.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -1142,7 +1142,119 @@ style: function (feature) {
 				});
 				return style;
 			}
- },
+  },
+		{
+			group: 'Emergency',
+			title: 'survey:date=2022',
+			query: '(nwr[~"^survey:date$"~"202[2]."][emergency]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'base/circle.svg',
+			iconStyle: 'background-color:rgba(187,92,120,1)',
+			style: function (feature) {
+				var key_regex = /^survey:date$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(187,92,120,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(187,92,120,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+  },
+		{
+			group: 'Emergency',
+			title: 'check_date=2022',
+			query: '(nwr[~"^check_date$"~"202[2]."][emergency]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'base/circle.svg',
+			iconStyle: 'background-color:rgba(187,92,120,1)',
+			style: function (feature) {
+				var key_regex = /^check_date$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(187,92,120,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(187,92,120,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+  },
+		{
+			group: 'Emergency',
+			title: 'operational_status:date=2022',
+			query: '(nwr[~"^operational_status:date$"~"202[2]."][emergency]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'base/circle.svg',
+			iconStyle: 'background-color:rgba(187,92,120,1)',
+			style: function (feature) {
+				var key_regex = /^operational_status:date$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(187,92,120,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(187,92,120,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+  },
+
 
 		{
 			group: 'Survey:date',

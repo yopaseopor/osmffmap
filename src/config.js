@@ -807,7 +807,7 @@ style: function (feature) {
 							text: new ol.style.Text({
 								text: name,
 								offsetX : 7,
-								offsetY : -6,
+								offsetY : -8,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'
                         }),

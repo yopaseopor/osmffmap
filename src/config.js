@@ -790,11 +790,8 @@ var config = {
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 style: function (feature) {
 				var key_regex = /^fire_hydrant:diameter$/
-				var key_regex2 = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
-				var name_key2 = feature.getKeys().filter(function(t){return t.match(key_regex2)}).pop() || "name2"
 				var name = feature.get(name_key) || '';
-				var name2 = feature.get(name_key2) || '';
 				var fill = new ol.style.Fill({
 					color: 'rgba(117,63,79,0.4)'
 				});
@@ -818,24 +815,7 @@ style: function (feature) {
 					fill: fill,
 					stroke: stroke
 				});
-				var style2 = new ol.style.Style({
-					image: new ol.style.Icon({
-							src: imgSrc + 'icones/hydrant_sign.svg',
-							scale:0.04
-						}),
-							text: new ol.style.Text({
-								text: name2,
-								offsetX : 0,
-								offsetY : 0,
-								fill: new ol.style.Fill({
-                            color: 'rgba(0,0,0,1)'
-                        }),
-						}),
-					fill: fill,
-					stroke: stroke
-				});
 				return style;
-				return style2;
 			}
 		},
 		
@@ -6932,6 +6912,7 @@ color: 'rgba(170, 170, 170, 0.3)'
 		complete.append($('<a>').css('marginLeft', 5).attr({title: 'Mapcomplete limits', href: 'https://mapcomplete.osm.be/index.html?z=' + view.getZoom() +'&lat='+ coordinateLL[1] +'&lon='+ coordinateLL[0] +'&userlayout=https%3A%2F%2Fraw.githubusercontent.com%2Fyopaseopor%2Fmcquests%2Fmain%2Flimits.json&language=en#welcome', target: '_blank'}).html($('<img>').attr({src: imgSrc + 'icones/maxspeed_question.svg', height: 20, width: 20})));
 		complete.append($('<a>').css('marginLeft', 5).attr({title: 'OSM Hydrants', href: 'https://www.osmhydrant.org/en/#zoom=' + view.getZoom() +'&lat='+ coordinateLL[1] +'&lon='+ coordinateLL[0], target: '_blank'}).html($('<img>').attr({src: imgSrc + 'osmhydrant_logo.png', height: 20, width: 20})));
 		complete.append($('<a>').css('marginLeft', 5).attr({title: 'Mapcomplete hydrants', href: 'https://mapcomplete.osm.be//hailhydrant.html?z=' + view.getZoom() +'&lat='+ coordinateLL[1] +'&lon='+ coordinateLL[0] +'&language=en&background=osm', target: '_blank'}).html($('<img>').attr({src: imgSrc + 'mapcomplete_logo.png', height: 20, width: 20})));
+		complete.append($('<a>').css('marginLeft', 5).attr({title: 'Mapcomplete track type', href: 'https://mapcomplete.osm.be/index.html?z=' + view.getZoom() +'&lat='+ coordinateLL[1] +'&lon='+ coordinateLL[0] +'&userlayout=https%3A%2F%2Fraw.githubusercontent.com%2Fyopaseopor%2Fmcquests%2Fmain%2Ftracktype.json&language=en#welcome', target: '_blank'}).html($('<img>').attr({src: imgSrc + 'icones/no_tracktype.svg', height: 20, width: 20})));
 		
 		var edit = $('<div>').html(config.i18n.editWith);
 		//ID editor

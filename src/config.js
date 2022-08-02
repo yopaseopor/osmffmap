@@ -2074,7 +2074,7 @@ style: function (feature) {
 			group: 'Tracktype',
 			title: 'Grade1',
 			query: '(way["highway"="track"]["tracktype"="grade1"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxwidth.svg',
+			iconSrc: imgSrc + 'icones/grade1.svg',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -2112,7 +2112,7 @@ style: function (feature) {
 			group: 'Tracktype',
 			title: 'Grade2',
 			query: '(way["highway"="track"]["tracktype"="grade2"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxwidth.svg',
+			iconSrc: imgSrc + 'icones/grade2.svg',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
@@ -2150,7 +2150,7 @@ style: function (feature) {
 			group: 'Tracktype',
 			title: 'Grade3',
 			query: '(way["highway"="track"]["tracktype"="grade3"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxwidth.svg',
+			iconSrc: imgSrc + 'icones/grade3.svg',
 			style: function (feature) {
 				var key_regex = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"

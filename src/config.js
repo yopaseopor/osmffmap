@@ -871,11 +871,21 @@ style: function (feature) {
 							})
 						})
 					},
-					'traffic_sign:backward': {
-						'ES:R1': new ol.style.Style({
+					'survey:date': {
+						'.*': new ol.style.Style({
 							image: new ol.style.Icon({
-						scale: 0.4,
-						src: 'https://raw.githubusercontent.com/yopaseopor/beta_preset_josm/master/ES/traffic_signs/ES/ES_R2.png'
+							src: imgSrc + 'icones/hydrant_sign.svg',
+							offsetX : 7,
+							offsetY : -13,
+							scale:0.07
+						}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 7,
+								offsetY : -13,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
 						}),
 							stroke: new ol.style.Stroke({
 								color: 'rgba(170, 170, 170, 1.0)',
@@ -885,8 +895,7 @@ style: function (feature) {
 								color: 'rgba(170, 170, 170, 0.3)'
 							})
 						})
-										},
-					'traffic_sign:forward': {
+					},: {
 						'ES:R1': new ol.style.Style({
 							image: new ol.style.Icon({
 						scale: 0.4,

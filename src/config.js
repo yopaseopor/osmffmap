@@ -846,7 +846,7 @@ style: function (feature) {
 			iconSrc: imgSrc + 'icones/fire_hydrant.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
-				var name = feature.get('fire_hydrant:diameter') || ''
+				var name = feature.get('fire_hydrant:diameter') || '';
 				var name2 = feature.get('survey:date') || '';
 				var styles = {
 					'fire_hydrant:diameter': {
@@ -896,7 +896,8 @@ style: function (feature) {
 								color: 'rgba(170, 170, 170, 0.3)'
 							})
 						})
-					},: {
+					},
+					'traffic_sign:forward': {
 						'ES:R1': new ol.style.Style({
 							image: new ol.style.Icon({
 						scale: 0.4,

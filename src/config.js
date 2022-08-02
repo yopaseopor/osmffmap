@@ -784,7 +784,7 @@ var config = {
   },
 		{
 			group: 'Emergency',
-			title: 'Fire hydrant2',
+			title: 'Fire hydrant',
 			query: '(node["emergency"="fire_hydrant"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/fire_hydrant.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
@@ -835,6 +835,7 @@ style: function (feature) {
 					stroke: stroke
 				});
 				return style;
+				return style2;
 			}
 		},
 		
@@ -1145,8 +1146,8 @@ style: function (feature) {
   },
 		{
 			group: 'Emergency',
-			title: 'survey:date=2022',
-			query: '(nwr[~"^survey:date$"~"202[2]."][emergency]({{bbox}});node(w););out meta;',
+			title: 'survey:date=2022',//MODIFY YEAR
+			query: '(nwr[~"^survey:date$"~"202[2]."][emergency]({{bbox}});node(w););out meta;',//MODIFY YEAR
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba(187,92,120,1)',
 			style: function (feature) {
@@ -1182,8 +1183,8 @@ style: function (feature) {
   },
 		{
 			group: 'Emergency',
-			title: 'check_date=2022',
-			query: '(nwr[~"^check_date$"~"202[2]."][emergency]({{bbox}});node(w););out meta;',
+			title: 'check_date=2022',//MODIFY YEAR
+			query: '(nwr[~"^check_date$"~"202[2]."][emergency]({{bbox}});node(w););out meta;',//MODIFY YEAR
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba(187,92,120,1)',
 			style: function (feature) {
@@ -1219,8 +1220,8 @@ style: function (feature) {
   },
 		{
 			group: 'Emergency',
-			title: 'operational_status:date=2022',
-			query: '(nwr[~"^operational_status:date$"~"202[2]."][emergency]({{bbox}});node(w););out meta;',
+			title: 'operational_status:date=2022',//MODIFY YEAR
+			query: '(nwr[~"^operational_status:date$"~"202[2]."][emergency]({{bbox}});node(w););out meta;',//MODIFY YEAR
 			iconSrc: imgSrc + 'base/circle.svg',
 			iconStyle: 'background-color:rgba(187,92,120,1)',
 			style: function (feature) {

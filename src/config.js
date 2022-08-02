@@ -847,6 +847,7 @@ style: function (feature) {
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
 				var name = feature.get('fire_hydrant:diameter') || '';
+				var name2 = feature.get('survey:date') || '';
 				var styles = {
 					'fire_hydrant:diameter': {
 						'.*': new ol.style.Style({
@@ -880,7 +881,7 @@ style: function (feature) {
 							scale:0.07
 						}),
 							text: new ol.style.Text({
-								text: name,
+								text: name2,
 								offsetX : 7,
 								offsetY : -13,
 								fill: new ol.style.Fill({

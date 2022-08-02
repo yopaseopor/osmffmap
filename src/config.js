@@ -790,8 +790,11 @@ var config = {
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 style: function (feature) {
 				var key_regex = /^fire_hydrant:diameter$/
+				var key_regex2 = /^survey:date$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name_key2 = feature.getKeys().filter(function(t){return t.match(key_regex2)}).pop() || "name2"
 				var name = feature.get(name_key) || '';
+				var name2 = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
 					color: 'rgba(117,63,79,0.4)'
 				});
@@ -806,6 +809,22 @@ style: function (feature) {
 						}),
 							text: new ol.style.Text({
 								text: name,
+								offsetX : 7,
+								offsetY : -10,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				var style2 = new ol.style.Style({
+					image: new ol.style.Icon({
+							src: imgSrc + 'icones/hydrant_sign.svg',
+							scale:0.07
+						}),
+							text: new ol.style.Text({
+								text: name2,
 								offsetX : 7,
 								offsetY : -10,
 								fill: new ol.style.Fill({

@@ -2409,7 +2409,7 @@ style: function (feature) {
 					image: new ol.style.Circle({
 						fill: fill,
 						stroke: stroke,
-						radius: 5
+						radius: 0
 					}),
 							text: new ol.style.Text({
 								text: name,

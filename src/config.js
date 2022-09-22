@@ -822,7 +822,7 @@ style: function (feature) {
 		{
 			
 			group: 'Test',
-			title: 'Fire hydrant',
+			title: 'Fire hydrant2',
 			query: '(node["emergency"="fire_hydrant"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/fire_hydrant.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',

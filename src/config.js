@@ -843,6 +843,13 @@ style: function (feature) {
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'
                         }),
+							text: new ol.style.Text({
+								text: name2,
+								offsetX : 5,
+								offsetY : -10,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
 						}),
 							stroke: new ol.style.Stroke({
 								color: 'rgba(170, 170, 170, 1.0)',

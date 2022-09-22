@@ -822,7 +822,7 @@ style: function (feature) {
 		{
 			
 			group: 'Test',
-			title: 'Fire hydrant3',
+			title: 'Fire hydrant2',
 			query: '(node["emergency"="fire_hydrant"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/fire_hydrant.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
@@ -839,13 +839,6 @@ style: function (feature) {
 							text: new ol.style.Text({
 								text: name,
 								offsetX : 7,
-								offsetY : -10,
-								fill: new ol.style.Fill({
-                            color: 'rgba(0,0,0,1)'
-                        }),
-							text: new ol.style.Text({
-								text: name2,
-								offsetX : 5,
 								offsetY : -10,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'

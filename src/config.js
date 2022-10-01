@@ -7306,7 +7306,7 @@ color: 'rgba(170, 170, 170, 0.3)'
 		//Geofabrik Tools
 		tool.append($('<a>').css('marginLeft', 5).attr({title: 'Geofabrik Tools', href: 'https://tools.geofabrik.de/osmi/?lon=' + coordinateLL[0] + '&lat=' + coordinateLL[1] + '&zoom=' + Math.min(view.getZoom(), 18) + '&view=tagging', target: '_blank'}).html($('<img>').attr({src: imgSrc + 'geofabrik.png', height: 20, width: 20})));
 
-		return $.merge($.merge(complete, edit, open), tool);
+		return $.merge($.merge(complete, ($.merge(edit, open)), tool);
 	},
 
 	//Es crida per cada element trobat al fer click

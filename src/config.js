@@ -946,7 +946,7 @@ style: function (feature) {
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 							src: imgSrc + 'icones/clinic_logo.svg',
-							scale:0.02
+							scale:0.07
 						}),
 							text: new ol.style.Text({
 								text: name,

@@ -786,7 +786,7 @@ var config = {
 			group: 'Emergency',
 			title: 'Police',
 			query: '(nwr["amenity"="police"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/fire_hydrant.svg',
+			iconSrc: imgSrc + 'icones/police_logo.png',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 style: function (feature) {
 				var key_regex = /^name$/
@@ -801,7 +801,7 @@ style: function (feature) {
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
-							src: imgSrc + 'icones/hydrant_sign.svg',
+							src: imgSrc + 'icones/police_logo.png',
 							scale:0.07
 						}),
 							text: new ol.style.Text({

@@ -930,7 +930,7 @@ style: function (feature) {
 			group: 'Emergency',
 			title: 'Clinic',
 			query: '(nwr["amenity"="clinic"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/clinic_logo.png',
+			iconSrc: imgSrc + 'icones/clinic_logo.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 style: function (feature) {
 				var key_regex = /^name$/
@@ -945,7 +945,7 @@ style: function (feature) {
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
-							src: imgSrc + 'icones/clinic_logo.png',
+							src: imgSrc + 'icones/clinic_logo.svg',
 							scale:0.02
 						}),
 							text: new ol.style.Text({
